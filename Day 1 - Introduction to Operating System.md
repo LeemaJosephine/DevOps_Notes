@@ -5,10 +5,10 @@
   E.g: Windows, Linux, MacOS, Android etc.,
   
 Operating Systems are classified based on where we are using it.
-- Desktop/ Laptop - Windows, MacOS, Linux
-- Mobile - Android. iOS, Harmony
-- Server/Enterprise level - Red Hat
-- We have a lot of OS beyond the above listed.
+- **Desktop/ Laptop** - Windows, MacOS, Linux
+- **Mobile** - Android. iOS, Harmony
+- **Server/Enterprise level**- Red Hat
+- There are many more specialized OS types beyond these.
 
 # What does an OS do?
 - Running the program
@@ -16,14 +16,14 @@ Operating Systems are classified based on where we are using it.
 - File Management
 - Resource Management
   
-E.g: User clicks the bowser to open, CPU will perform the action and all this is done by OS.
+Example: When a user clicks a browser, the OS coordinates CPU, memory, and other resources to open it.
     
 # Main Components of OS
 
 Each component of does some work, the components are: 
 -  Kernel (Core of OS) -> Controls CPU, Memory, Devices.
 -  System Calls - Interface between Apps and OS
--  File System - Organising data (files/folder)
+-  File System - Organizing data (files/folder)
 -  Device Drivers - Communicate with hardware
 -  User Interface - CLI (Terminal) or GUI (Graphical User Interface)
 
@@ -31,7 +31,7 @@ Each component of does some work, the components are:
   ##  Major Responsibilities
   1. Process Management - Runs multiple program (Multi-Tasking)
   2. Memory Management - Allocate RAM efficiently
-  3. File Management - Stores and retrives files
+  3. File Management - Stores and retrieves files
   4. Device Management - Controls Keyboard, mouse, printers.
   5. Security - User authentication and permissions.
 
@@ -50,25 +50,31 @@ Key Features:
   - Extremely lightweight and powerful
   - Excellent for servers and development
 
-Popular Distors:
+Popular Distros:
 - Ubuntu
 - Kali Linux
 - Debian
 - Fedora
 
-Where is is used
+Where it is used
 - Cloud
 - DevOps
 - Web services (90% of internet runs on Linux)
 
 ## Windows
-  - 
+  - User-friendly
+  - Strong software compatibility
+  - Popular for personal and enterprise desktop use
+    
 ## MacOS
-  - 
+  - Developed by Apple Inc.
+  - Based on Unix
+  - Known for stability and design
+    
 ## Unix
 
   - One of the oldest operating system
-  - Dveloped at Bell Labs
+  - Developed at Bell Labs
   - Designed for multiuser and multitasking
 
 Features:
@@ -91,7 +97,7 @@ Usecases:
   - Large Enterprise Services
 
  
-### Unix is Parent of Linux and Windows
+### Unix is the parent of Linux (Unix-like)
 
 # Linux Vs Windows
 
@@ -107,9 +113,9 @@ Usecases:
 - You are into programming/DevOps/Cloud
 - Linux = Power + Control + Servers
 - Why Linux is Lightweight? 
-      Minimal beackground process, runs only essential services, no unnecessary apps by default as result uses less RAM, CPU and storage.
+      Minimal background process, runs only essential services, no unnecessary apps by default as result uses less RAM, CPU and storage.
   
-## How an organization decides (Linus or Windows): 
+## How an organization decides (Linux or Windows): 
 1. Start with the Use Case
 - Choose Linux when
     - Running Web Servers, APIs, Microservices.
@@ -122,10 +128,10 @@ Usecases:
         - .NET applications
         - Microsoft office
 2. Cost Consideration
-3. Security Requiremenrs - Surface of the attack is less in Linux than Windows. Windows need anti-virus
+3. Security Requirements - Surface of the attack is less in Linux than Windows. Windows need anti-virus
 4. Application Compatibility
-5. Team Skills - Linus needs commanf line knowledge, Windows needs lesser traing compared to Linux
-6. Cloud and DevOps Stratergy - Windows for Cloud and Linus for Containers. 
+5. Team Skills - Linus needs command line knowledge, Windows needs lesser training compared to Linux
+6. Cloud and DevOps Strategy - Windows for Cloud and Linus for Containers. 
 7. Enterprise Ecosystem - Windows provide strong integration with Active directory (MS Team, Sharepoint), best for IT environment. Linux is strong in Open source ecosystems. 
   
 ## Can an organization run both Linux + Windows 
@@ -153,7 +159,7 @@ Yes,
    - Install both OS on same system
    - Choose OS at startup
 
-# System Lifecycle Management
+# System States
 
 ## 1. Boot (System booting)
 Starting the computer from OFF state
@@ -232,7 +238,7 @@ Technical:
 Exit current user session
 
 Technically:
-- Closses user processes
+- Closes user processes
 - Keeps system ON
 
 ## 8. Lock
@@ -243,11 +249,34 @@ Technically:
 - Requires password to access
 
 ## 9. Force Shutdown
-Holding power buttin -> immediate shutdown
+Holding power button -> immediate shutdown
 
 Risk:
 - Data loss
 - File corruption as there is no proper OS
 
+### In DevOps, 2 operations are important 1. Reload/Restart 2. System Boot/Reboot
+
+# What is Virtualization?
+Virtualization is creating a virtual version of physical resource.
+
+How it works
+  - Managed by a Hypervisor
+  - It divides
+      - CPU
+      - RAM
+      - Storage
+    - Creates multiple virtual systems
+
+# What is Virtual Machine?
+Virtual machine: software based computer.
+  
+It has
+- OS
+- CPU (Virtual CPU)
+- RAM (Virtual)
+- Disk (Virtual
+    
+    
 
 
