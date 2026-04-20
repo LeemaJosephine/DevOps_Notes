@@ -95,13 +95,13 @@ Usecases:
 
 # Linux Vs Windows
 
-### When to use Windows?
+## When to use Windows?
 - When you want ease of use
 - Regular office work or gaming
 - Need specific software (MS Office, Adobe)
 - Windows = Ease + Compatibility + Desktop
   
-### When to use Linux?
+## When to use Linux?
 - Choose Linux if you want performance + Control
 - You like customization
 - You are into programming/DevOps/Cloud
@@ -109,7 +109,7 @@ Usecases:
 - Why Linux is Lightweight? 
       Minimal beackground process, runs only essential services, no unnecessary apps by default as result uses less RAM, CPU and storage.
   
-### How an organization decides (Linus or Windows): 
+## How an organization decides (Linus or Windows): 
 1. Start with the Use Case
 - Choose Linux when
     - Running Web Servers, APIs, Microservices.
@@ -128,10 +128,10 @@ Usecases:
 6. Cloud and DevOps Stratergy - Windows for Cloud and Linus for Containers. 
 7. Enterprise Ecosystem - Windows provide strong integration with Active directory (MS Team, Sharepoint), best for IT environment. Linux is strong in Open source ecosystems. 
   
-### Can an organization run both Linux + Windows 
+## Can an organization run both Linux + Windows 
 Yes, based on their requirement.
 
-### Can we run Linux inside Windows (Linux on Windows)
+## Can we run Linux inside Windows (Linux on Windows)
 Yes,
 1. WSL - Windows Subsystem for Linux
      WSL is present in windows by default using that we can run Linux inside Windows.
@@ -143,7 +143,7 @@ Yes,
 3. Dual Boot
      - Install both OS on same system
      - Choose OS at startup
-### Can we run Windows inside Linux (Windows on Linux)
+## Can we run Windows inside Linux (Windows on Linux)
 
 1. Virtual Machine (Computer within a Computer) - Windows runs inside Linux on VM
 2. Wine (Compatibility Layer)
@@ -152,5 +152,102 @@ Yes,
 3. Dual Boot
    - Install both OS on same system
    - Choose OS at startup
-          
+
+# System Lifecycle Management
+
+## 1. Boot (System booting)
+Starting the computer from OFF state
+Technically:
+- Power ON
+- BIOS/UEFI starts
+- Hardware checks (POST)
+- Bootloader loads OS
+- Kernel loads into RAM
+- OS starts services - login screen appears.
+
+Analogy:
+Starting a car from completely OFF state
+  -  Engine starts
+  -  System initializes
+  -  Ready to drive
+
+## 2. Restart (Reboot)
+Turning off and on automatically
+Technically:
+- OS will close all processes
+- Clears RAM
+- Reloads kernel
+- Start Fresh
+
+Analogy:
+  Restarting your phone to fix temporary issues
+
+## 3. Start (Power ON)
+Processing power button to turn system ON
+It triggers boot process
+Technically:
+- It sends signal to motherboard
+- Boot sequences will begin
+
+Analogy:
+  Switching on electricity in house
+
+## 4. Hibernet
+Saves the current state and turn OFF completely
+Technically:
+- RAM data -> saved to hard disk
+- Power = 0
+- On resume -> state restored
+
+Analogy:
+  Like bookmarking a page in book
+
+## 5. Shut down
+Completetly turning off system
+Technically:
+- All process stopped
+- RAM cleared
+- OS safely exits
+- Power OFF
+
+Analogy: Closing shop for a day
+
+## 6. Sleep
+Pausing system but keeping RAM active
+
+Technical:
+- RAM powered
+- CPU mostly off
+- Quick resume
+
+### Sleep Vs Hibernet
+
+| Feature | Sleep | Hibernet |
+| --------|-------|----------|
+| Power use| Low  | Zero |
+| Resume Speed | Fast | Slow |
+| Data Storage | RAM | Disk |
+
+## 7. Log off
+Exit current user session
+
+Technically:
+- Closses user processes
+- Keeps system ON
+
+## 8. Lock
+Locks screen without closing apps
+
+Technically:
+- Sessions remains active
+- Requires password to access
+
+## 9. Force Shutdown
+Holding power buttin -> immediate shutdown
+
+Risk:
+- Data loss
+- File corruption as there is no proper OS
+
+
 
