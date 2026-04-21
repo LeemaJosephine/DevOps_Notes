@@ -76,7 +76,7 @@ Text-based instructions that you type into a terminal (command line) to tell the
 
 # Task 1: Navigate the system (Where am I?)
 
-Goal: find your current location and move around  
+**Goal: find your current location and move around**
 
 ```bash
 pwd          # Show current directory
@@ -86,3 +86,49 @@ ls -l        # Detailed list
 cd /home     # Go to /home
 cd ..        # Move one level up
 cd ~         # Go to home directory
+```
+
+# Task 2: File & Folder Management
+
+**Goal: Create project structure**
+```bash
+mkdir <folder-name>        # Create folder
+cd <folder-name>           # Enter folder
+
+touch <file-name>       # Create file
+
+mkdir <folder-name>         # Create another folder
+cp <file-name> <folder-name>   # Copy file
+
+mv <old-file-name> <new-file-name>  # Rename file
+
+rm <file-name>           # Delete file
+```
+# Task 3: Shortcuts & Productivity
+
+```bash
+# Create Multiple Files
+touch <file1> <file2> <file3> <file4>
+
+# Create Nested Directories
+mkdir -p project1/src/components
+
+# Copy Entire Folder
+cp -r <folder-name> <new-folder>
+
+# Move Multiple Files
+mv <file1> <file2> <file3> <folder>/
+```
+
+# Task 4: Loops (Automation)
+**Goal: Create 10 files**
+
+```bash
+# Loop Method
+for i in {1..10}; do
+  touch file$i.txt
+done
+
+# Shortcut Method
+touch file{1..10}.txt
+```
