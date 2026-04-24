@@ -98,14 +98,14 @@ Vim (Vi Improved) is a terminal based text-editor used to
 ▪ Work over SSH (no GUI)
 ```
 
-Vim has 3 main modes
+**Vim has 3 main modes**
 
-```
-Mode Purpose
-Normal Navigation+Commands
-Insert Typing text
-Command Save, quit, actions
-```
+| Mode | Purpose |
+|------|---------|
+| Normal | Navigation+Commands |
+| Insert | Typing text |
+| Command | Save, quit, actions |
+
 **Mode flow**
 
 Normal -> (i)-> Insert -> (Esc) -> Normal-> (:)-> Command
