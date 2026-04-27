@@ -217,6 +217,8 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/mykey
 | `-b 4096`         | Create a 4096-bit key                    |
 | `-f ~/.ssh/mykey` | Save key to `~/.ssh/mykey`              |
 
+<img width="418" height="70" alt="image" src="https://github.com/user-attachments/assets/e6fc1e2a-a301-4759-99f2-1e62833613dc" />
+</br>
 **Step 3:** Add public key to Authorized Access
 
 ```bash
