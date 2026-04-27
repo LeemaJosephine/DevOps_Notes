@@ -1,6 +1,6 @@
 # Day 5 - Logging on to the systems
 
-Combining multiple files/folders into a single file
+Archiving: Combining multiple files/folders into a single file
 
 ## Windows Comparison
 
