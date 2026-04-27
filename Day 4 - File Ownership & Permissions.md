@@ -1,4 +1,4 @@
-#Day 4 -File Ownership & Permissions
+# Day 4 -File Ownership & Permissions
 
 Every file/directory in linux has 3 ownership attributes
 
@@ -29,6 +29,9 @@ echo “this is a test file” >> file.txt
 
 ls -l
 
+<img width="406" height="51" alt="image" src="https://github.com/user-attachments/assets/60a9fd55-9ac2-43a2-8e76-cc6e7724c37b" />
+</br>
+
 **Output:**
 
 - Owner
@@ -46,6 +49,9 @@ Give
 - Others: no access
 
 **Solution:**
+<img width="395" height="54" alt="image" src="https://github.com/user-attachments/assets/25805407-782e-473d-bfde-f7d5f13afde9" />
+
+</br>
 
 **Exercise 3: Symbolic method**
 
@@ -56,20 +62,27 @@ Give
 ▪ Remove read from others
 ```
 **Solution:**
+<img width="395" height="68" alt="image" src="https://github.com/user-attachments/assets/8135562d-61f6-4417-bf76-dd2aba6b16bb" />
+</br>
 
 **Exercise 4: Real DevOps Scenario**
 
 **Create script:**
 
 vim deploy.sh
-
+<img width="317" height="209" alt="image" src="https://github.com/user-attachments/assets/336879b4-f6d1-4bd7-b5e5-c86a149cff4c" />
+</br>
 **Save and run**
 
 ./deploy.sh
+<img width="394" height="58" alt="image" src="https://github.com/user-attachments/assets/0fd47fff-85fc-432f-8d13-6e273c4806e9" />
+</br>
 
 chmod +x deploy.sh
+<img width="396" height="78" alt="image" src="https://github.com/user-attachments/assets/0d274f48-e9e3-4135-b3cc-8b23796a8a97" />
+</br>
 
-Linux File System
+## Linux File System
 
 Linux follows a hierarchical structure (tree-like) starting from
 
@@ -85,7 +98,7 @@ Base of everything
 
 User personal directory
 
-Example: /home/ubuntu
+**Example: /home/ubuntu**
 
 /root
 
@@ -160,6 +173,8 @@ cd ~ # go to home
 cd /
 
 ls -l
+<img width="453" height="389" alt="image" src="https://github.com/user-attachments/assets/e3b355f4-ea17-4a06-a509-21948ccc01a1" />
+</br>
 
 **Exercise 2: Navigate user directory**
 
@@ -170,13 +185,16 @@ ls -l
 cd ~
 
 pwd
+<img width="371" height="96" alt="image" src="https://github.com/user-attachments/assets/90e4cd0c-f80c-4598-8079-0462d6c5e06d" />
+</br>
 
 **Exercise 3: Create your own structure**
 
 **Goal:** Create project folder structure
 
 myproject (code, logs, data)
-
+<img width="1009" height="270" alt="image" src="https://github.com/user-attachments/assets/a27d1491-ad28-43f7-9d26-4d1bd55f2d89" />
+</br>
 **Exercise 4: Create files in different directory**
 
 touch myproject/code/app.txt
@@ -185,6 +203,8 @@ touch myproject/logs/app.log
 
 touch myproject/data/input.txt
 
+<img width="900" height="189" alt="image" src="https://github.com/user-attachments/assets/c30f40fc-1b8f-4875-bb96-cc2565426321" />
+</br>
 **Note: tree command in linux is used to display the directory structure in a
 hierarchical (tree-like) structure**
 
@@ -193,6 +213,8 @@ hierarchical (tree-like) structure**
 sudo apt update
 
 sudo apt install -y tree
+<img width="739" height="293" alt="image" src="https://github.com/user-attachments/assets/478c7821-f0d0-4dc7-907e-9bfc9b04b89a" />
+</br>
 
 **Additional Pointers**
 
@@ -202,13 +224,14 @@ Almost everything is treated as file: even hardware, processes and system info
 
 Examples
 
-```
-Type Example Meaning
-Regular file file.txt Normal data
-Directory /home Folder
-Device /dev/sda Hard disk
-Process info /proc/cpuinfo CPU Details
-```
+
+| Type | Example | Meaning |
+|------|---------|---------|
+| Regular file | file.txt | Normal data |
+| Directory | /home | Folder |
+| Device | /dev/sda | Hard disk |
+| Process info | /proc/cpuinfo | CPU Details |
+
 **Absolute vs Relative Path**
 
 **Absolute path**
@@ -216,6 +239,8 @@ Process info /proc/cpuinfo CPU Details
 Full path from root /
 
 /home/ubuntu/file.txt
+<img width="1019" height="69" alt="image" src="https://github.com/user-attachments/assets/b0c00901-7414-4518-9934-e05fa7b67e4a" />
+</br>
 
 **Relative path**
 
@@ -225,12 +250,11 @@ file.txt
 
 ../file.txt
 
-```
-Symbol Meaning
-```
-. current directory
-.. parent directory
-~ home directory
+| Symbol | Meaning |
+|--------|---------|
+| . | current directory |
+|.. | parent directory |
+|~ | home directory |
 
 **Hidden files**
 
@@ -256,11 +280,10 @@ A cron job is used to schedule tasks automatically in Linux
 
 **Windows Comparison**
 
-**Linux Windows**
-
-Cron job Task schedular
-
-Crontab Scheduled Tasks UI
+| Linux | Windows |
+|-------|----------|
+|Cron job| Task schedular|
+|Crontab| Scheduled Tasks UI|
 
 **Cron System Components**
 
@@ -272,7 +295,8 @@ Crontab Scheduled Tasks UI
 ▪ command/script: What you want to run
 ```
 **Crontab Syntax**
-
+<img width="1004" height="495" alt="image" src="https://github.com/user-attachments/assets/ebe820b2-9c5d-4844-bc2f-6d56ae174568" />
+</br>
 **Examples:**
 
 ```
@@ -293,19 +317,22 @@ crontab -r # remove all jobs
 **Exercise 1: Run command every minute**
 
 **Step 1:** crontab - e (# It will ask you to choose editor)
+<img width="1253" height="420" alt="image" src="https://github.com/user-attachments/assets/1baf70c6-dbdf-4702-92d5-a8b4af082794" />
+</br>
 
 **Troubleshooting:**
 
 If not getting the output, follow below steps
 
-```
 ▪ Check if cron service is running or not
 sudo systemctl status cron
-```
+<img width="1253" height="432" alt="image" src="https://github.com/user-attachments/assets/e677785e-5a85-4efa-9699-232b991afb84" />
+</br>
 Check cron logs
 
 sudo grep CRON /var/log/syslog
-
+<img width="1253" height="435" alt="image" src="https://github.com/user-attachments/assets/8f920bf9-0760-4e5f-8516-6474c723e111" />
+</br>
 List the jobs
 
 crontab -l
@@ -313,6 +340,8 @@ crontab -l
 **Exercise 2: Runs Every 5 minutes**
 
 ***/5 * * * * echo “Hello Again” >> /home/ubuntu/cron.txt**
+<img width="1253" height="486" alt="image" src="https://github.com/user-attachments/assets/309bbcb2-565e-4d75-a99c-15698cad8e1e" />
+</br>
 
 **Exercise 3: Runs at 5th minute of every hour**
 
