@@ -179,6 +179,12 @@ A password prompt will appear. You need to enter the password.
 
 Uses a **private key** (client) and **public key** (server).
 
+While craeting the instance choose "Create key pair" and generate the ".pem" file. 
+Go to location where is .pem file downaloded in local system -> Open cmd -> enter -> **ssh -i mykey.pem ubuntu@ec2-52-66-162-81.ap-south-1.compute.amazonaws.com**   
+
+ec2-52-66-162-81.ap-south-1.compute.amazonaws.com  - this can be taken from Public DNS in instance. 
+
+
 ---
 
 ## Generate SSH Key Pair
