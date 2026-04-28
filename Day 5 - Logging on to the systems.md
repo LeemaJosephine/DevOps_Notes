@@ -236,3 +236,7 @@ cat ~/.ssh/mykey.pub >> ~/.ssh/authorized_keys
 ```bash
 cat ~/.ssh/mykey   # Copy entire output to a file on local and save it as mykey.pem
 ```
+
+# SCP - Secure Copy Protocol
+
+Command line tool to securely transfer files. 
