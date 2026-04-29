@@ -248,12 +248,17 @@ Command line tool to securely transfer files.
      - Open the terminal from the folder location
      - enter the command -> ssh -keygen -t rsa -b 4096 -f <file-name>
      - Key will be created in the folder
-           - Change the permission of the private key to _"Read only"_
+          - Change the permission of the private key to _"Read only"_
                - **chmod 400 <file-name>**
-      - Go to ECS2 instance -> Create a file
-            - nano ~/.ssh/authorized_keys -> Paste the public key copied from the local system.
-      - In local system terminal:
-            - ssh -i <file_name> ubuntu@<Public_DNS>
+      - Go to ECS2 instance
+           - Create a file
+           - **nano ~/.ssh/authorized_keys**
+           - Paste the public key copied from the local system.
 
-3) Create file in local system (Normal text file)
-4) 
+      - In local system terminal:
+           - **ssh -i <file_name> ubuntu@<Public_DNS>**
+
+3) Create file in local system (Normal text file) that needs to transfered to remote
+4) Open terminal in the folder location
+     - **scp -i <source_file-name> ubuntu@<public_DNS> : destination_foldername/filename .**
+5) Use ls -l command to check for the file transfer
