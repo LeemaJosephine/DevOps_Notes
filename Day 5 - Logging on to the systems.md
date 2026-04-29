@@ -240,3 +240,20 @@ cat ~/.ssh/mykey   # Copy entire output to a file on local and save it as mykey.
 # SCP - Secure Copy Protocol
 
 Command line tool to securely transfer files. 
+
+### Transfer file from local to remote
+
+1) Create a folder in local system
+2) Generate SSH key using Key pair
+     - Open the terminal from the folder location
+     - enter the command -> ssh -keygen -t rsa -b 4096 -f <file-name>
+     - Key will be created in the folder
+           - Change the permission of the private key to _"Read only"_
+               - **chmod 400 <file-name>**
+      - Go to ECS2 instance -> Create a file
+            - nano ~/.ssh/authorized_keys -> Paste the public key copied from the local system.
+      - In local system terminal:
+            - ssh -i <file_name> ubuntu@<Public_DNS>
+
+3) Create file in local system (Normal text file)
+4) 
