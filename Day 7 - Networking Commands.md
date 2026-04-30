@@ -345,9 +345,62 @@ Gateway
 Genmask
 - Subnet mask
 
+
 Flags
 - U ->  route is up
 - G -> uses gateway
 
 Iface
 - ens5 -> network card
+
+
+### ipcongig/ifcongif
+
+**ifcongig**
+
+- Install net-tools
+- 
+<img width="518" height="245" alt="image" src="https://github.com/user-attachments/assets/0788a7c7-6bf4-462f-a698-6b85362d7e2d" />
+<br>
+
+### arp
+
+Address resolution protocol - Used to map an IP address to MAC address. It's like a bridge between
+
+**Why arp needed?**
+
+In an network, devices communicates using IP address (Logical communication) , bur the actual data transfer happens using MAC address (physical communication)
+
+Example:
+
+System wants to send 
+
+```
+arp -a
+```
+<img width="645" height="34" alt="image" src="https://github.com/user-attachments/assets/b5defcba-80bb-4086-8f20-bf1ff0eed8cf" />
+</br>
+
+Mordern alternative: 
+```
+ip neigh
+```
+<img width="395" height="28" alt="image" src="https://github.com/user-attachments/assets/d289dd05-579e-43f3-ad19-f9618366a85c" />
+</br>
+
+### netstat
+
+Show all listening port
+```
+netstat -tuln
+```
+<img width="548" height="158" alt="image" src="https://github.com/user-attachments/assets/610ca5db-a29c-46a7-b4c3-506dc37be50c" />
+</br?
+
+Show all process using port
+```
+netstat -tulp
+```
+<img width="659" height="170" alt="image" src="https://github.com/user-attachments/assets/d8f83d3c-8ac5-415c-ba27-d0b060b8c5ee" />
+</br>
+
