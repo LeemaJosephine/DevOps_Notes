@@ -180,3 +180,9 @@ Allow all the inbound rules in SG level and NACL level -> Break the outbound tra
 
 <img width="959" height="305" alt="image" src="https://github.com/user-attachments/assets/39c30fa1-45b7-4516-9964-e358b5b41538" />
 </br>  
+
+Additional:
+
+Traffic flow:
+
+NACL -> SG -> EC2  => Reason : Request goes to subnet (NACL) then to SG  then to EC2.
