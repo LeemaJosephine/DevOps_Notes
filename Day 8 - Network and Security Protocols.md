@@ -181,8 +181,125 @@ Allow all the inbound rules in SG level and NACL level -> Break the outbound tra
 <img width="959" height="305" alt="image" src="https://github.com/user-attachments/assets/39c30fa1-45b7-4516-9964-e358b5b41538" />
 </br>  
 
-Additional:
-
+_**Additional:**
 Traffic flow:
+NACL -> SG -> EC2  => Reason : Request goes to subnet (NACL) then to SG  then to EC2._
 
-NACL -> SG -> EC2  => Reason : Request goes to subnet (NACL) then to SG  then to EC2.
+---
+
+### Network Security Protocols:
+
+**SSL/TLS (Secure Communication over Internet)**
+
+Secure communication betweem client(browser) and server
+
+**SSL (Secure Socket Layer):** old (deprecated)
+
+**TLS (Transport Layer Security):** mordern version
+
+**Used in:**
+- HTTPs
+- APIs
+- Secure web apps
+
+**Examples:**
+hhtp://abc.com (not secure)
+https://abc.com (secure)
+
+**How TLS works:**
+
+- Client -> "Hello" (supported encryption)
+- Server -> send certificate
+- Client verifies certificate
+- Encrypted communication starts
+
+**What TLS Provides**
+
+|Feature|Meaning|
+|-------|-------|
+|Encryption| Data unreadable to attackers|
+|Integrity|Data not modified|
+|Authentication|| Verify server identity|
+
+**IPSec (Secure network communication)**
+
+Secure communication between **networks or systems**
+
+**What is IPSec?**
+
+A protocol suite that secures IP-level communication
+
+**Where it's used?**
+- VPNs
+- Site-to-site connections
+- Cloud networking
+
+**How IPSec works**
+Two modes:
+**Transport mode**
+ - Encryptes only data
+ - Used for host-to-host
+
+**Tunnel Mode**
+-  Encrypts entire packet
+-  Used in VPNs
+
+**TLS:** Looking a message inside an envelop
+
+**IPSec:** Securing the entire road between cities
+
+---
+
+### Overview of DevSecOps tools
+
+**What is DevSecOps**
+
+**Development + Security + Operation integrated together**
+
+**Goal:**
+- Build fast
+- Stay Secure
+- Automate everything
+
+**DevSecOps Pipeline**
+Code -> Build -> Test -> Scan -> Deply -> Monitor
+
+Incoperating security in all the levels
+
+**Categories of DevSecOps Tools**
+
+1. **SAST (Static Applications Security Testing)**
+   Scan source code for vulnerabilities before running
+   
+     Tools:
+   - SonarQube
+   - Checkmax
+   
+3. **DAST (Dynamic Testing)**
+   Test running applications for vulnerabilities
+
+     Tools:
+     - Burp Suite
+
+4. **SCA (Software Composition Analysis)**
+     Scan dependencies (libraries)
+
+     Tools:
+     - Synk
+     - Dependabot
+
+5. **Container Security**
+      Scan docker images
+
+      Tools:
+      - Trivy
+      - Clair
+
+6. **Secrets Management**
+     Protects credentials
+
+     Tools:
+     - HashiCorp Vault
+     - AWS Secrets Manager
+
+        
