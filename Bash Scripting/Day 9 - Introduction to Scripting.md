@@ -650,7 +650,403 @@ echo "City: $city"
 
 > **Note:** If user enters nothing → default value is used
 
+---
 
+# Passing Arguments to a Script
+
+## What does "Passing Arguments" Mean?
+
+Giving input to a script at the time of execution.
+
+**Example:**
+
+```bash
+./script.sh hello world
+```
+
+- `hello` → first argument
+- `world` → second argument
+
+---
+
+## Basic Hands-on
+
+### Step 1: Create script
+
+```bash
+nano args.sh
+```
+
+### Step 2: Add Code
+
+```bash
+#!/bin/bash
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
+echo "Total arguments: $#"
+```
+
+### Step 3: Run Script
+```
+./args.sh
+```
+---
+
+## How Bash Accesses Arguments
+
+| Variable | Meaning             |
+|----------|---------------------|
+| `$0`     | Script Name         |
+| `$1`     | First argument      |
+| `$2`     | Second Argument     |
+| `$#`     | Number of Arguments |
+| `$@`     | All Arguments       |
+
+---
+
+## Loop Through Arguments
+
+```bash
+#!/bin/bash
+for arg in "$@"
+do
+  echo "Argument: $arg"
+done
+```
+
+---
+
+## Use Case 1: Install Any Package (Dynamic Script)
+
+**Goal:** Install different software without changing script
+
+```bash
+#!/bin/bash
+package=$1
+echo "Installing package..."
+sudo apt update && sudo apt install $package -y
+```
+
+---
+
+## Use Case 2: Running the Application on a Custom Port
+
+
+```bash
+#!/bin/bash
+PORT=$1
+echo "Starting server on port $PORT in background"
+python3 -m http.server $PORT &
+```
+
+---
+
+# Conditional Statements
+
+A way to execute code only if a condition is true
+
+- if server down → restart
+- if disk > 80% → alert
+
+## Basic `if` Statement
+
+```bash
+if [ condition ]
+then
+  commands
+fi
+```
+
+**Example:**
+
+```bash
+num=10
+if [ $num -gt 5 ]
+then
+  echo "Number is greater than 5"
+fi
+```
+
+## `if-else` Statement
+
+```bash
+num=3
+if [ $num -gt 5 ]
+then
+  echo "Greater"
+else
+  echo "Smaller"
+fi
+```
+
+## `if-elif-else` (Multiple Conditions)
+
+```bash
+num=10
+if [ $num -lt 5 ]
+then
+  echo "Less than 5"
+elif [ $num -eq 10 ]
+then
+  echo "Equal to 10"
+else
+  echo "Greater than 5"
+fi
+```
+
+---
+
+## Hands-on Scripts
+
+### Demo 1: Check if a Service is Running
+
+```bash
+#!/bin/bash
+if systemctl is-active --quiet nginx
+then
+  echo "Nginx is running"
+else
+  echo "Nginx is stopped"
+fi
+```
+### Demo 2: User Input + Condition
+
+```bash
+#!/bin/bash
+read -p "Enter number: " num
+if [ $num -gt 10 ]
+then
+  echo "Greater than 10"
+else
+  echo "Less or equal to 10"
+fi
+```
+---
+
+# Functions
+
+A block of code that performs a specific task and can be reused.
+
+**Why use functions:**
+- Avoid repeating code
+- Make scripts modular
+- Easier debugging
+
+## Basic Syntax
+
+**Method 1:**
+
+```bash
+function myfunc {
+  echo "Hello from function"
+}
+```
+
+**Method 2:**
+
+```bash
+myfunc() {
+  echo "Hello from function"
+}
+```
+
+**Call Function:**
+
+```bash
+myfunc
+```
+
+---
+
+## Hands-on Example
+
+### Step 1: Create script
+
+```bash
+nano func.sh
+```
+
+### Step 2: Add code
+
+```bash
+#!/bin/bash
+greet() {
+  echo "Hello from function"
+}
+greet
+```
+
+### Step 3: Run
+---
+
+### Demo 2: Function with Arguments
+
+![greet function using $1 called with greet Jatin](adv_images/embed_p7_21.png)
+
+```bash
+#!/bin/bash
+greet() {
+  echo "Hello $1"
+}
+greet Jatin
+```
+---
+
+### Multiple Arguments
+
+```bash
+#!/bin/bash
+add() {
+  sum=$(( $1 + $2 ))
+  echo "Sum is $sum"
+}
+add 10 20
+```
+---
+
+## Demo: Use Multiple Functions in a Single Bash Script
+
+A complete system manager script that:
+- Checks disk
+- Checks service
+- Starts server
+- Logs everything
+
+**Function 1 — Check Disk Usage:**
+
+```bash
+#!/bin/bash
+
+# -------- Function 1: Check Disk usage ----------
+check_disk() {
+  usage=$(df / | awk 'NR==2 {print $5}' | sed 's/%//')
+  echo "Disk usage: $usage%"
+  if [ $usage -gt 80 ]
+  then
+    echo "Disk usage high"
+  else
+    echo "Disk is healthy"
+  fi
+}
+```
+
+**Function 2 — Check Service:**
+
+```bash
+# ------- Function 2: Check Service -------
+check_service() {
+  service=$1
+  if systemctl is-active --quiet $service
+  then
+    echo "Service is running"
+  else
+    echo "Service is not running"
+  fi
+}
+```
+
+**Function 3 — Start Service & Function 4 — Main Controller:**
+
+```bash
+# ---- Function 3: Start the service -----
+start_service() {
+  service=$1
+  echo "Starting service"
+  sudo systemctl start $service
+}
+
+# --- Function 4: Main Controller ----
+main() {
+  echo "system check started"
+  check_disk
+  check_service nginx
+}
+```
+
+**Entry point:**
+
+```bash
+main
+```
+---
+
+# Repeating Code with Shell Loops
+
+Execute the same block of code multiple times automatically.
+
+**Without loops:**
+
+```bash
+echo "Hello"
+echo "Hello"
+echo "Hello"
+```
+
+**With loops:**
+
+```bash
+for i in {1..3}
+do
+  echo "Hello"
+done
+```
+
+## Types of Loops in Shell
+
+| Loop    | Use Case                     |
+|---------|------------------------------|
+| `for`   | Fixed number of times        |
+| `while` | Until condition is true      |
+| `until` | Until condition becomes true |
+
+---
+
+## `for` Loop — Repeat 5 Times
+
+```bash
+for i in {1..5}
+do
+  echo "Iteration $i"
+done
+```
+
+## `while` Loop
+
+```bash
+i=1
+while [ $i -le 5 ]
+do
+  echo "Count: $i"
+  ((i++))
+done
+```
+
+## `until` Loop
+
+```bash
+i=1
+until [ $i -gt 5 ]
+do
+  echo "Number: $i"
+  ((i++))
+done
+```
+
+> **Note:** Runs until the condition becomes true.
+
+---
+
+## Use Case 1: Retry API Calls
+
+```bash
+for ((i=1; i<=5; i++))
+do
+  echo "Attempt $i"
+  curl -s http://localhost:8080 && break
+  sleep 2
+done
+```
 ---
 
 ## Quiz
