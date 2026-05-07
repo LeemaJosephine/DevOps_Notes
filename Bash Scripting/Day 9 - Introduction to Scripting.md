@@ -882,14 +882,12 @@ greet
 
 ### Demo 2: Function with Arguments
 
-![greet function using $1 called with greet Jatin](adv_images/embed_p7_21.png)
-
 ```bash
 #!/bin/bash
 greet() {
   echo "Hello $1"
 }
-greet Jatin
+greet Leema
 ```
 ---
 
